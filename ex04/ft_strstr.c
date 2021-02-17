@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msamoile <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 09:26:32 by msamoile          #+#    #+#             */
-/*   Updated: 2021/02/17 10:10:31 by msamoile         ###   ########.fr       */
+/*   Created: 2021/02/17 13:04:43 by msamoile          #+#    #+#             */
+/*   Updated: 2021/02/17 13:06:03 by msamoile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int i;
+	int n;
 
+	if (*to_find == '\0')
+		return (str);
 	i = 0;
-	while (s1[i] && s2[i])
+	while (str[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		n = 0;
+		while (to_find[n] == str[i + n])
+		{
+			if (to_find[n + 1] == '\0')
+			{
+				return (str + i);
+			}
+			n++;
+		}
 		i++;
 	}
 	return (0);
 }
 
-int main()
-{
-	char s1[] = "goomy";
-	char s2[] = "goody";
+#include <stdio.h>
 
-	printf("%d\n", ft_strcmp(s1, s2));
+int	main()
+{
+	char to_find[] = "so";
+	char src[] = "i am so fucking tired";
+
+	printf("%s", ft_strstr(src, to_find));
 	return (0);
 }

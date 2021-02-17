@@ -6,7 +6,7 @@
 /*   By: msamoile <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:53:44 by msamoile          #+#    #+#             */
-/*   Updated: 2021/02/16 15:56:27 by msamoile         ###   ########.fr       */
+/*   Updated: 2021/02/17 10:59:37 by msamoile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strcat(char *dest, char *src)
 	int n;
 
 	i = 0;
-	while ( dest[i])
+	while (dest[i])
 		i++;
 	n = 0;
 	while (src[n])
