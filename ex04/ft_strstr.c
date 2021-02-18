@@ -6,7 +6,7 @@
 /*   By: msamoile <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:04:43 by msamoile          #+#    #+#             */
-/*   Updated: 2021/02/17 13:06:03 by msamoile         ###   ########.fr       */
+/*   Updated: 2021/02/18 10:12:03 by msamoile         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strstr(char *str, char *to_find)
 		{
 			if (to_find[n + 1] == '\0')
 			{
-				return (str + i);
+				return (&str[i]);
 			}
 			n++;
 		}
